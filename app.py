@@ -221,7 +221,7 @@ def edit_profile():
     form = EditProfile()
 
     if form.validate_on_submit():
-        if User.authenticate(user.username, user.password):
+        if User.authenticate(user.username, form.password.password):
             user.username = form.username.data;
             user.email = form.email.data;
             user.image_url = form.image_url.data;
